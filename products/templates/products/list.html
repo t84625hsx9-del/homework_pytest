@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Наш каталог</h1>
+    <hr>
+    <ul>
+        {% for product in products %}
+            <li>
+                <strong>{{ product.name }}</strong> — {{ product.price }} руб.
+                <a href="{% url 'product_update' product.pk %}">[Правка]</a>
+                <a href="{% url 'product_delete' product.pk %}">[Удалить]</a>
+            </li>
+        {% empty %}
+            <p>Товаров пока нет.</p>
+        {% endfor %}
+    </ul>
+{% endblock %}

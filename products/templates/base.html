@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Мой магазин</title>
+</head>
+<body>
+    <nav>
+        <a href="{% url 'product_list' %}">Главная</a> | 
+        <a href="{% url 'product_create' %}">Добавить товар</a>
+    </nav>
+
+    <main>
+        {% block content %}
+        <!-- Сюда прилетит контент из list.html -->
+        {% endblock %}
+    </main>
+
+    <footer>
+        <p>2024 Мой Django Проект</p>
+    </footer>
+</body>
+</html>
